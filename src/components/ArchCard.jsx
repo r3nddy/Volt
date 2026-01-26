@@ -1,6 +1,6 @@
 const ArchCard = () => {
   return (
-    <div className="bg-[#18181b] p-6 rounded-3xl flex-1 flex flex-col shadow-lg relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+    <div className="bg-card-dark p-6 rounded-3xl flex-1 flex flex-col shadow-lg relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
       <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-purple-500 via-pink-500 to-blue-500 opacity-50"></div>
 
       <div className="flex items-center gap-2 mb-6 bg-[#27272a] w-fit px-3 py-1 rounded-full">
