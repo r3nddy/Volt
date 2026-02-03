@@ -1,9 +1,35 @@
 import { ArrowRight, Lock } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Clock = () => {
-  const time = "01.03";
-  const periond = "AM";
-  const date = "Friday, 05 April 2004";
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // ambil jam dan menit (format 12 jam)
+  const time = currentTime
+    .toLocaleString("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    })
+    .split(" ")[0]
+    .replace(".", ":");
+
+  // format PM/AM
+  const period = currentTime.getHours() >= 12 ? "PM" : "AM";
+
+  const dateString = currentTime.toLocaleDateString("en-GB", {
+    weekday: "short",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
 
   return (
     <div className="bg-card-dark h-full flex flex-col items-center justify-center relative p-8">
@@ -13,10 +39,10 @@ const Clock = () => {
             {time}
           </h1>
           <span className="text-4xl font-semibold text-purple-400">
-            {periond}
+            {period}
           </span>
         </div>
-        <p className="text-2xl text-purple-200/80 font-medium">{date}</p>
+        <p className="text-2xl text-purple-200/80 font-medium">{dateString}</p>
       </div>
 
       <div className="relative mb-12 group">
