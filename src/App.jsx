@@ -1,6 +1,8 @@
 import ArchCard from "./components/ArchCard";
 import Clock from "./components/Clock";
 import MusicPlayer from "./components/MusicPlayer";
+import Notification from "./components/Notification";
+import Stats from "./components/stats";
 import WeatherCard from "./components/WeatherCard";
 
 function App() {
@@ -15,7 +17,14 @@ function App() {
         </div>
         {/* kolom tengah */}
         <div className="flex flex-col gap-6 lg:col-span-2 h-full">
-          <Clock />
+          <div className="rounded-3xl overflow-hidden h-full bg-card-dark shadow-lg">
+            <Clock />
+          </div>
+        </div>
+        {/* kolom kanan */}
+        <div className="flex flex-col gap-6 lg:col-span-1 h-full">
+          <Stats />
+          <Notification />
         </div>
       </div>
     </div>
