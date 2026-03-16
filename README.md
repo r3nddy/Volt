@@ -1,5 +1,5 @@
 <div align="center">
-<h1> 😎 VOLT</h1>
+<h1>VOLT</h1>
 <h3>Modern & Responsive Weather Application</h3>
 
 <p align="center">
