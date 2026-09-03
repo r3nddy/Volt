@@ -64,30 +64,28 @@ const WeatherSearch = ({
       )}
 
       {data && !loading && !error && (
-        <div className="mt-1 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm z-10 relative">
-          <h2 className="text-blue-400 font-bold text-lg mb-2">
+        <div className="mt-1 p-4 rounded-xl bg-white/3 border border-white/6 backdrop-blur-sm z-10 relative font-mono text-sm tracking-tight">
+          <h2 className="text-purple-300 font-semibold text-base mb-3 tracking-normal">
             Hasil untuk: {data.name}
           </h2>
           <ul className="space-y-2 text-gray-200">
-            <li className="flex justify-between border-b border-white/5 pb-1">
-              <strong className="text-gray-400">Suhu:</strong>
-              <span className="text-orange-400 font-mono">
-                {data.main.temp}°C
-              </span>
+            <li className="flex justify-between border-b border-white/4 pb-1">
+              <strong className="text-gray-500 font-normal">Suhu</strong>
+              <span className="text-purple-300">{data.main.temp}°C</span>
             </li>
-            <li className="flex justify-between border-b border-white/5 pb-1">
-              <strong className="text-gray-400">Kondisi:</strong>
-              <span className="capitalize">
+            <li className="flex justify-between border-b border-white/4 pb-1">
+              <strong className="text-gray-500 font-normal">Kondisi</strong>
+              <span className="capitalize text-gray-300">
                 {data.weather?.[0]?.description}
               </span>
             </li>
-            <li className="flex justify-between border-b border-white/5 pb-1">
-              <strong className="text-gray-400">Kelembapan:</strong>
-              <span>{data.main.humidity}%</span>
+            <li className="flex justify-between border-b border-white/4 pb-1">
+              <strong className="text-gray-500 font-normal">Kelembapan</strong>
+              <span className="text-gray-300">{data.main.humidity}%</span>
             </li>
             <li className="flex justify-between">
-              <strong className="text-gray-400">Angin:</strong>
-              <span>{data.wind.speed} m/s</span>
+              <strong className="text-gray-500 font-normal">Angin</strong>
+              <span className="text-gray-300">{data.wind.speed} m/s</span>
             </li>
           </ul>
         </div>
