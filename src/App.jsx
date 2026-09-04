@@ -3,6 +3,7 @@ import ArchCard from "./components/ArchCard";
 import Clock from "./components/Clock";
 import MusicPlayer from "./components/MusicPlayer";
 import BriefingCard from "./components/BriefingCard";
+import TriviaCard from "./components/TriviaCard";
 import Stats from "./components/Stats";
 import WeatherCard from "./components/WeatherCard";
 import { useWeather } from "./hooks/useWeather";
@@ -42,6 +43,7 @@ function App() {
             error={weather.error}
             onRetry={weather.retry}
           />
+          <TriviaCard />
         </div>
       </div>
     </div>
