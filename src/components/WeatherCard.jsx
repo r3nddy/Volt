@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import {
   Cloud,
   CloudDrizzle,
@@ -40,8 +41,33 @@ const Skeleton = () => (
   </>
 );
 
+/* ── float hook: sin-wave movement via rAF, true 60fps ── */
+function useFloat(amplitude = 6, periodMs = 3000, ready = true) {
+  const elRef = useRef(null);
+
+  useEffect(() => {
+    const el = elRef.current;
+    if (!el || !ready) return;
+
+    let raf = 0;
+    const tick = (now) => {
+      const phase = (now % periodMs) / periodMs; // 0…1
+      const y = Math.sin(phase * Math.PI * 2) * amplitude;
+      const r = Math.sin(phase * Math.PI * 2 + 0.6) * 2; // subtle ±2deg wobble
+      el.style.transform = `translateY(${y}px) rotate(${r}deg)`;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [amplitude, periodMs, ready]);
+
+  return elRef;
+}
+
 const WeatherCard = ({ data, loading, error, onRetry }) => {
   const Icon = ICON_MAP[data?.weather?.[0]?.main] ?? Cloud;
+  const hasData = data && !loading && !error;
+  const floatRef = useFloat(10, 3400, hasData);
 
   return (
     <div className="bg-card-dark p-6 rounded-3xl flex flex-col justify-between h-40 shadow-lg relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
@@ -78,7 +104,9 @@ const WeatherCard = ({ data, loading, error, onRetry }) => {
           </div>
 
           <div className="flex items-center gap-4 z-10">
-            <Icon className="w-12 h-12 text-white" />
+            <span ref={floatRef} className="inline-block will-change-transform">
+                <Icon className="w-12 h-12 text-white" />
+              </span>
             <div>
               <p className="text-lg font-medium text-gray-200 capitalize">
                 {data.weather?.[0]?.description}
