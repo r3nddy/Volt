@@ -71,13 +71,13 @@ const WeatherCard = ({ data, loading, error, onRetry }) => {
 
   return (
     <div className="bg-card-dark p-6 rounded-3xl flex flex-col justify-between h-40 shadow-lg relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
 
       {loading && <Skeleton />}
 
       {error && !loading && (
         <>
-          <h2 className="text-xl font-semibold text-purple-300 z-10">
+          <h2 className="text-xl font-semibold text-green-300 z-10">
             Weather
           </h2>
           <div className="z-10 flex items-center justify-between gap-2">
@@ -95,7 +95,7 @@ const WeatherCard = ({ data, loading, error, onRetry }) => {
       {data && !loading && !error && (
         <>
           <div className="flex items-baseline justify-between z-10">
-            <h2 className="text-xl font-semibold text-purple-300">
+            <h2 className="text-xl font-semibold text-green-300">
               {data.name}
             </h2>
             <p className="text-2xl font-bold text-white">

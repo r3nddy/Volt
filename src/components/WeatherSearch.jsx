@@ -32,12 +32,12 @@ const WeatherSearch = ({
           onChange={(e) => setInput(e.target.value)}
           placeholder={`Cari kota… (aktif: ${city})`}
           aria-label="Cari kota"
-          className="flex-1 min-w-0 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-400/60 transition-colors"
+          className="flex-1 min-w-0 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-green-400/60 transition-colors"
         />
         <button
           type="submit"
           aria-label="Cari cuaca"
-          className="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white transition-all duration-200 shadow-lg shadow-indigo-500/20 active:scale-95"
+          className="px-3 py-2 rounded-xl bg-green-600 hover:bg-green-500 text-white transition-all duration-200 shadow-lg shadow-green-500/20 active:scale-95"
         >
           <Search size={16} />
         </button>
@@ -65,13 +65,13 @@ const WeatherSearch = ({
 
       {data && !loading && !error && (
         <div className="mt-1 p-4 rounded-xl bg-white/3 border border-white/6 backdrop-blur-sm z-10 relative font-mono text-sm tracking-tight">
-          <h2 className="text-purple-300 font-semibold text-base mb-3 tracking-normal">
+          <h2 className="text-green-300 font-semibold text-base mb-3 tracking-normal">
             Hasil untuk: {data.name}
           </h2>
           <ul className="space-y-2 text-gray-200">
             <li className="flex justify-between border-b border-white/4 pb-1">
               <strong className="text-gray-500 font-normal">Suhu</strong>
-              <span className="text-purple-300">{data.main.temp}°C</span>
+              <span className="text-green-300">{data.main.temp}°C</span>
             </li>
             <li className="flex justify-between border-b border-white/4 pb-1">
               <strong className="text-gray-500 font-normal">Kondisi</strong>

@@ -1,7 +1,7 @@
 import { Cpu, Thermometer, HardDrive, Bot } from "lucide-react";
 
 const Usage = (props) => {
-  const { value, icon: Icon, color = "text-purple-400" } = props;
+  const { value, icon: Icon, color = "text-green-400" } = props;
   const radius = 32;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (value / 100) * circumference;
@@ -43,13 +43,13 @@ const Stats = () => {
     <div className="bg-card-dark p-6 rounded-3xl h-64 shadow-lg grid grid-cols-2 gap-4 place-items-center relative group hover:scale-[1.05] transition-transform duration-300 z-10">
       <div className="absolute inset-0 bg-transparent rounded-3xl border border-white/5 pointer-events-none"></div>
       {/* kiri atas */}
-      <Usage value={45} icon={Cpu} color="text-purple-400" />
+      <Usage value={45} icon={Cpu} color="text-green-400" />
       {/* kanan atas */}
       <Usage value={40} icon={Thermometer} color="text-white" />
       {/* kiri bawah */}
       <Usage value={60} icon={HardDrive} color="text-red-400" />
       {/* kanan bawah */}
-      <Usage value={90} icon={Bot} color="text-blue-400" />
+      <Usage value={90} icon={Bot} color="text-green-400" />
     </div>
   );
 };
