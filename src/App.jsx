@@ -2,7 +2,7 @@ import { useState } from "react";
 import ArchCard from "./components/ArchCard";
 import Clock from "./components/Clock";
 import MusicPlayer from "./components/MusicPlayer";
-import WeatherSearch from "./components/WeatherSearch";
+import BriefingCard from "./components/BriefingCard";
 import Stats from "./components/Stats";
 import WeatherCard from "./components/WeatherCard";
 import { useWeather } from "./hooks/useWeather";
@@ -34,7 +34,7 @@ function App() {
         {/* kolom kanan */}
         <div className="flex flex-col gap-6 lg:col-span-1 h-full">
           <Stats />
-          <WeatherSearch
+          <BriefingCard
             city={city}
             onCityChange={setCity}
             data={weather.data}
