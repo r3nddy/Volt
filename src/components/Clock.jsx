@@ -12,7 +12,7 @@ const Clock = () => {
   }, []);
 
   // ambil jam dan menit (format 12 jam)
-  const time = currentTime
+  const raw = currentTime
     .toLocaleString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
@@ -20,6 +20,8 @@ const Clock = () => {
     })
     .split(" ")[0]
     .replace(".", ":");
+
+  const [hours, minutes] = raw.split(":");
 
   // format PM/AM
   const period = currentTime.getHours() >= 12 ? "PM" : "AM";
@@ -35,8 +37,10 @@ const Clock = () => {
     <div className="bg-card-dark h-full flex flex-col items-center justify-center relative p-8">
       <div className="flex flex-col items-center mb-12">
         <div className="flex items-baseline gap-4 mb-2">
-          <h1 className="text-8xl font-bold text-white tracking-tight">
-            {time}
+          <h1 className="text-8xl font-bold text-white tracking-tight [font-variant-numeric:tabular-nums]">
+            <span>{hours}</span>
+            <span className="animate-[blink_1s_step-end_infinite] relative -top-3">:</span>
+            <span>{minutes}</span>
           </h1>
           <span className="text-4xl font-semibold text-purple-400">
             {period}
