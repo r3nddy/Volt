@@ -32,7 +32,7 @@ const MusicPlayer = () => {
 
   return (
     <div className="bg-card-dark p-6 rounded-3xl h-44 shadow-lg flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-      <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-purple-500/20 rounded-full blur-xl"></div>
+      <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-green-500/20 rounded-full blur-xl"></div>
 
       <audio ref={audioRef} src={currentSong.src} onEnded={handleNext} />
 
@@ -55,7 +55,7 @@ const MusicPlayer = () => {
         </button>
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="p-3 rounded-full bg-purple-400 hover:bg-purple-500 text-black transition-colors shadow-lg shadow-purple-500/20"
+          className="p-3 rounded-full bg-green-400 hover:bg-green-500 text-black transition-colors shadow-lg shadow-green-500/20"
         >
           {isPlaying ? (
             <Pause size={20} fill="currentColor" />
