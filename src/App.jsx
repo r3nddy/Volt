@@ -7,10 +7,12 @@ import TriviaCard from "./components/TriviaCard";
 import Stats from "./components/Stats";
 import WeatherCard from "./components/WeatherCard";
 import { useWeather } from "./hooks/useWeather";
+import { useCrypto } from "./hooks/useCrypto";
 
 function App() {
   const [city, setCity] = useState("Samarinda");
   const weather = useWeather(city);
+  const crypto = useCrypto();
 
   return (
     <div className="min-h-screen bg-bg-dark text-white p-8 flex items-start justify-center font-sans selection:bg-green-500/30">
@@ -34,7 +36,12 @@ function App() {
         </div>
         {/* kolom kanan */}
         <div className="flex flex-col gap-6 lg:col-span-1 h-full">
-          <Stats />
+          <Stats
+            data={crypto.data}
+            loading={crypto.loading}
+            error={crypto.error}
+            onRetry={crypto.retry}
+          />
           <BriefingCard
             city={city}
             onCityChange={setCity}

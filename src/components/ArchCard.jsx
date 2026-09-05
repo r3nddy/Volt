@@ -13,7 +13,7 @@ const ArchCard = () => {
           <svg
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-full h-full text-green-500"
+            className="w-full h-full text-sky-300"
           >
             <path d="M12 2L2 19h20L12 2zm1 16h-2v-2h2v2zm0-4h-2V8h2v6z" />
             {/* gambar tiruan logo arch */}
@@ -28,19 +28,19 @@ const ArchCard = () => {
 
         <div className="flex flex-col gap-1 font-mono text-xs sm:text-sm text-gray-400">
           <div className="flex">
-            <span className="w-12 text-green-400">OS</span>:
+            <span className="w-12 text-sky-300">OS</span>:
             <span className="text-gray-200"> Arch Linux</span>
           </div>
           <div className="flex">
-            <span className="w-12 text-green-400">WM</span> :
+            <span className="w-12 text-violet-300">WM</span> :
             <span className="text-gray-200">Hyprland</span>
           </div>
           <div className="flex">
-            <span className="w-12 text-green-400">USER</span> :{" "}
+            <span className="w-12 text-amber-300">USER</span> :{" "}
             <span className="text-gray-200">Rendy</span>
           </div>
           <div className="flex">
-            <span className="w-12 text-green-400">UP</span> :{" "}
+            <span className="w-12 text-emerald-300">UP</span> :{" "}
             <span className="text-gray-200">6 hours, 9 mins</span>
           </div>
         </div>
