@@ -40,7 +40,7 @@ const Clock = () => {
         <div className="flex items-baseline gap-4 mb-2">
           <h1 className="text-7xl font-bold text-white tracking-tight [font-variant-numeric:tabular-nums]">
             <span>{hours}</span>
-            <span className="animate-[blink_1s_step-end_infinite] relative -top-3">:</span>
+            <span className="animate-[blink_1s_step-end_infinite]">:</span>
             <span>{minutes}</span>
           </h1>
           <span className="text-3xl font-semibold text-green-400">
