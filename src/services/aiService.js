@@ -1,7 +1,7 @@
 import { openRouterChat } from "../api/aiApi";
 
-// Model OpenRouter — Claude Haiku 4.5 murah & cepat
-const MODEL = "anthropic/claude-haiku-4-5";
+// Model OpenRouter — model gratis
+const MODEL = "qwen/qwen-2.5-72b-instruct:free";
 
 const SYSTEM_PROMPT = `Kamu adalah asisten cuaca untuk aplikasi Volt.
 Beri ringkasan singkat (2-3 kalimat) dalam Bahasa Indonesia yang:

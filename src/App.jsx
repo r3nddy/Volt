@@ -26,7 +26,7 @@ function App() {
             onRetry={weather.retry}
           />
           <ArchCard />
-          <MusicPlayer />
+          <MusicPlayer weatherData={weather.data} />
         </div>
         {/* kolom tengah */}
         <div className="flex flex-col gap-6 lg:col-span-2 h-full">

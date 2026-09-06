@@ -47,6 +47,7 @@ export function useTrivia() {
       setTrivia(text);
       // eslint-disable-next-line no-unused-vars
     } catch (err) {
+      console.error("[useTrivia Error]:", err);
       setError("Gagal memuat trivia. Coba lagi nanti.");
     } finally {
       setLoading(false);
