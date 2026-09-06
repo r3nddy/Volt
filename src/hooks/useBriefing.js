@@ -33,7 +33,7 @@ export function useBriefing(weatherData) {
         setBriefing(text);
         lastCityRef.current = weatherData.name;
       }
-    } catch (err) {
+    } catch {
       if (id !== requestIdRef.current) return;
       setError("Gagal membuat briefing. Coba lagi.");
       setBriefing(null);
