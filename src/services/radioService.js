@@ -5,7 +5,7 @@ import {
   parseRadioRecommendation,
 } from "./radioRecommendation.js";
 
-const MODEL = "qwen/qwen-2.5-72b-instruct:free";
+const MODEL = "openrouter/free";
 
 const SYSTEM_PROMPT = `Kamu memilih satu channel radio internet untuk aplikasi Volt.
 Pilih hanya dari station ID yang diberikan.

@@ -1,6 +1,6 @@
 import { openRouterChat } from "../api/aiApi";
 
-const MODEL = "google/gemini-2.0-flash-lite-001:free";
+const MODEL = "openrouter/free";
 
 const FALLBACK_TRIVIA = [
   "Linus Torvalds menciptakan Git hanya dalam waktu 2 minggu karena ia benci dengan VCS yang ada saat itu.",
