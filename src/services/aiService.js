@@ -1,7 +1,7 @@
 import { openRouterChat } from "../api/aiApi";
 
 // Model OpenRouter — model gratis
-const MODEL = "qwen/qwen-2.5-72b-instruct:free";
+const MODEL = "openrouter/free";
 
 const SYSTEM_PROMPT = `Kamu adalah asisten cuaca untuk aplikasi Volt.
 Beri ringkasan singkat (2-3 kalimat) dalam Bahasa Indonesia yang:
